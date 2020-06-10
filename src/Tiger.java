@@ -3,14 +3,13 @@ import java.awt.*;
 public class Tiger extends Critter{
     private int countMove;
     public Tiger(){
-        super();
+        countMove=0;
     }
 
     /**
      * Randomly picks one of three colors (Color.RED, Color.GREEN, Color.BLUE)
      * and uses that color for three moves, then randomly picks one of those colors again
      * for the next three moves,then randomly picks another one of those colors for the next three moves, and so on.
-     * @return
      */
     public Color getColor() {
         int i=0;
@@ -31,7 +30,7 @@ public class Tiger extends Critter{
      */
 
     public Action getMove(CritterInfo info){
-        if(info.getFront()==Neighbor.OTHER) {
+        if(info.getFront()==Neighbor.OTHER){
             return Action.INFECT;
         } else if (info.getFront()==Neighbor.WALL||info.getRight()==Neighbor.WALL){
             return Action.LEFT;
